@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
-  <DefaultLanguage xmlns="" code="en-US" />
+  <DefaultLanguage xmlns="" code="pt-BR" />
   <App xmlns="" ProductID="{e1db8ada-e1c2-4514-932b-5ca57058b73f}" Title="QuemSou" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="QuemSou author" Description="Sample description" Publisher="QuemSou" PublisherID="{e2ed0bf7-901d-4c8a-8a69-4056daec8d95}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
