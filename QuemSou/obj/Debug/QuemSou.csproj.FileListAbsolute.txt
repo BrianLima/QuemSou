@@ -17,3 +17,4 @@ C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\obj\Debug\QuemSou.csproj.Gener
 C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\obj\Debug\QuemSou.dll
 C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\obj\Debug\QuemSou.pdb
 C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\obj\Debug\XapCacheFile.xml
+C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\obj\Debug\GamePage.g.cs
