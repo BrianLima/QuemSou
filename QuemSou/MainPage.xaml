@@ -48,12 +48,10 @@
 
         <!--ContentPanel - place additional content here-->
         <StackPanel Grid.Row="1" Margin="12,0,10,0" Orientation="Horizontal" Grid.ColumnSpan="4" Background="Transparent">
-            <ListBox Height="Auto" x:Name="categories" Width="457" HorizontalAlignment="Left">
+            <ListBox Height="Auto" x:Name="categories" Width="457" HorizontalAlignment="Left" Margin=" 0,0,0,0">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <QuemSou:TileControl/>
-                        </Grid>
+                        <QuemSou:TileControl Margin="0,0,0,0" Tap="TileControl_Tap"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

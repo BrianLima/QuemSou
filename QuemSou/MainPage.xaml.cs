@@ -13,12 +13,13 @@ namespace QuemSou
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        Game Game;
         // Constructor
         public MainPage()
         {
             InitializeComponent();
 
-            Game Game = new Game();
+            Game = new Game();
             Game.StartGame();
             categories.ItemsSource = Game.categories;
 
@@ -29,6 +30,17 @@ namespace QuemSou
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/GamePage.xaml", UriKind.Relative));
+        }
+
+        private void TileControl_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var t = sender as TileControl;
+            if (t != null)
+            {
+                Category category = t.DataContext as Category;
+                Game.Play(category.category);
+                NavigationService.Navigate(new Uri("/GamePage.xaml", UriKind.Relative));
+            }
         }
 
         // Sample code for building a localized ApplicationBar
