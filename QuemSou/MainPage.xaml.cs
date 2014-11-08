@@ -18,6 +18,10 @@ namespace QuemSou
         {
             InitializeComponent();
 
+            Game Game = new Game();
+            Game.StartGame();
+            categories.ItemsSource = Game.categories;
+
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }

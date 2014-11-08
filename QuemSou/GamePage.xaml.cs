@@ -28,8 +28,18 @@ namespace QuemSou
             accelerometer.TimeBetweenUpdates = TimeSpan.FromMilliseconds(500);
             accelerometer.CurrentValueChanged += new EventHandler<SensorReadingEventArgs<AccelerometerReading>>(accelerometer_CurrentValueChanged);
             accelerometer.Start();
+        }
 
-            tbxtest.DataContext = test;
+        void changeColor(bool test)
+        {
+            if (test)
+            {
+                this.Dispatcher.BeginInvoke((Action)(() => { tbxtest.Foreground = brush2; }));
+            }
+            else
+            {
+                this.Dispatcher.BeginInvoke((Action)(() => { tbxtest.Foreground = brush1; }));
+            }
         }
 
         void accelerometer_CurrentValueChanged(object sender, SensorReadingEventArgs<AccelerometerReading> e)
@@ -42,15 +52,24 @@ namespace QuemSou
                 // Change the pivot control index by -1
                 test++;
                 this.Dispatcher.BeginInvoke((Action)(() => { tbxtest.Text = test.ToString(); }));
+                this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Visible; }));
             }
-            if (acceleration.Z >= 0.35)
+            else if (acceleration.Z >= 0.35)
             {
 
                 // Application Logic
                 // change the pivot control index by +1
                 test--;
-                this.Dispatcher.BeginInvoke((Action)(() => { ContentPanel.Background = brush2; }));
+                this.Dispatcher.BeginInvoke((Action)(() => { tbxtest.Text = test.ToString(); }));
+                this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Visible; }));
+
+            }
+            else
+            {
+                this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Collapsed; }));
+
             }
         }
     }
+
 }
