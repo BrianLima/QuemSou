@@ -15,6 +15,7 @@ namespace QuemSou
     public partial class GamePage : PhoneApplicationPage
     {
         Player player;
+        Game game;
         Accelerometer accelerometer;
 
         public GamePage()
@@ -55,7 +56,19 @@ namespace QuemSou
         {
             string category = NavigationContext.QueryString["category"];
             player = new Player(category);
+            game = new Game();
+
+            updateCurrentWord();
+
+            LayoutRoot.DataContext = player;
+
+            
             base.OnNavigatedTo(e);
+        }
+
+        void updateCurrentWord()
+        {
+            player.setCurrentWord(game.Play(player.category));
         }
     }
 
