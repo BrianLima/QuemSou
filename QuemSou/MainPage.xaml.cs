@@ -38,8 +38,7 @@ namespace QuemSou
             if (t != null)
             {
                 Category category = t.DataContext as Category;
-                Game.Play(category.category);
-                NavigationService.Navigate(new Uri("/GamePage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/GamePage.xaml?category=" + category.category, UriKind.Relative));
             }
         }
 

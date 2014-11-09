@@ -9,16 +9,13 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Devices.Sensors;
 using Microsoft.Xna.Framework;
-using System.Windows.Media;
 
 namespace QuemSou
 {
     public partial class GamePage : PhoneApplicationPage
     {
-        int test;
+        Player player;
         Accelerometer accelerometer;
-        SolidColorBrush brush2 = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 0, 255, 0));
-        SolidColorBrush brush1 = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0, 255, 0, 0)); 
 
         public GamePage()
         {
@@ -30,18 +27,6 @@ namespace QuemSou
             accelerometer.Start();
         }
 
-        void changeColor(bool test)
-        {
-            if (test)
-            {
-                this.Dispatcher.BeginInvoke((Action)(() => { tbxtest.Foreground = brush2; }));
-            }
-            else
-            {
-                this.Dispatcher.BeginInvoke((Action)(() => { tbxtest.Foreground = brush1; }));
-            }
-        }
-
         void accelerometer_CurrentValueChanged(object sender, SensorReadingEventArgs<AccelerometerReading> e)
         {
             Vector3 acceleration = e.SensorReading.Acceleration;
@@ -50,25 +35,27 @@ namespace QuemSou
             {
                 // Application Logic
                 // Change the pivot control index by -1
-                test++;
-                this.Dispatcher.BeginInvoke((Action)(() => { tbxtest.Text = test.ToString(); }));
-                this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Visible; }));
             }
             else if (acceleration.Z >= 0.35)
             {
 
                 // Application Logic
                 // change the pivot control index by +1
-                test--;
-                this.Dispatcher.BeginInvoke((Action)(() => { tbxtest.Text = test.ToString(); }));
-                this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Visible; }));
+                //this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Visible; }));
 
             }
             else
             {
-                this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Collapsed; }));
+                //this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Collapsed; }));
 
             }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            string category = NavigationContext.QueryString["category"];
+            player = new Player(category);
+            base.OnNavigatedTo(e);
         }
     }
 
