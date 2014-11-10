@@ -28,6 +28,12 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock HorizontalAlignment="Right" Margin="0,42,17,0" TextWrapping="Wrap" Text="5:59" VerticalAlignment="Top" FontSize="72" Width="141"/>
+            <TextBlock HorizontalAlignment="Left" Margin="546,10,0,0" TextWrapping="Wrap" Text="Tempo restante:" VerticalAlignment="Top" Width="141"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Pontuação:" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="112,10,0,0" TextWrapping="Wrap" Text="XX Palavras certas" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="275,10,0,0" TextWrapping="Wrap" Text="XX Palavras erradas" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="267" Width="531"/>
 
         </Grid>
     </Grid>
