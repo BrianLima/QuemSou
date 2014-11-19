@@ -21,9 +21,10 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Eu Sou:" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="{Binding CurrentWord}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Eu Sou:" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,373,0"/>
+            <TextBlock Text="{Binding Category}" Style="{StaticResource PhoneTextNormalStyle}" Margin="348,-27,0,0" TextAlignment="Right"/>
+            <TextBlock  Text="{Binding CurrentWord}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -35,6 +36,11 @@
             <TextBlock HorizontalAlignment="Left" Margin="275,10,0,0" TextWrapping="Wrap" Text="XX Palavras erradas" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="267" Width="531"/>
 
+        </Grid>
+        
+        <!--Instructions panel-->
+        <Grid x:Name="InstructionsPanel" HorizontalAlignment="Left" Height="460" Margin="0,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="716">
+            <TextBlock Margin="10,10,10,0" TextWrapping="Wrap" TextAlignment="Center" Text="Este lado para cima ↑" VerticalAlignment="Top" FontSize="72"/>
         </Grid>
     </Grid>
 
