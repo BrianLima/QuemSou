@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -19,9 +20,10 @@ namespace QuemSou
     {
         private Player _player;
         private Game _game;
-        private Accelerometer _accelerometer;
-        private DispatcherTimer _timer;
-        private bool _started;
+        private readonly DispatcherTimer _interfaceTimer;
+        private bool _started, _playing;
+        private int _seconds;
+
         public GamePage()
         {
             InitializeComponent();
@@ -29,20 +31,44 @@ namespace QuemSou
             TitlePanel.Visibility = Visibility.Collapsed;
             ContentPanel.Visibility = Visibility.Collapsed;
             
-            _accelerometer = new Accelerometer();
-            _accelerometer.TimeBetweenUpdates = TimeSpan.FromMilliseconds(500);
-            _accelerometer.CurrentValueChanged += new EventHandler<SensorReadingEventArgs<AccelerometerReading>>(accelerometer_CurrentValueChanged);
-            _accelerometer.Start();
+            var accelerometer = new Accelerometer {TimeBetweenUpdates = TimeSpan.FromMilliseconds(1000)};
+            accelerometer.CurrentValueChanged += new EventHandler<SensorReadingEventArgs<AccelerometerReading>>(accelerometer_CurrentValueChanged);
+            accelerometer.Start();
 
-            _timer = new DispatcherTimer();
-            _timer.Interval = new TimeSpan(0,1,0);
-            _timer.Tick += _timer_Tick;
-            _started = false;
+            _playing = _started = false;
+
+            //Using this to update the UI each second
+            _interfaceTimer = new DispatcherTimer {Interval = new TimeSpan(0,0,1)};
+            _interfaceTimer.Tick += _interfaceTimer_Tick;
+            _seconds = 5;
         }
 
-        void _timer_Tick(object sender, EventArgs e)
+        void _interfaceTimer_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("Testando");
+            if (!_playing)
+            {
+                this.Dispatcher.BeginInvoke((Action) (() => CountdownBlock.Text = _seconds.ToString()));
+                _seconds--;
+            }
+            else if (_playing)
+            {
+                var text = TimeSpan.FromSeconds((_seconds));
+                this.Dispatcher.BeginInvoke((Action)(() => ClockBlock.Text = text.Minutes + ":" + text.Seconds));
+                _seconds--;
+            }
+            
+            if (_seconds == 0 && ! _playing)
+            {
+                this.Dispatcher.BeginInvoke((Action)(() => { InstructionsPanel.Visibility = Visibility.Collapsed; }));
+                this.Dispatcher.BeginInvoke((Action)(() => { ContentPanel.Visibility = Visibility.Visible; }));
+                this.Dispatcher.BeginInvoke((Action)(() => { TitlePanel.Visibility = Visibility.Visible; }));
+                _seconds = 300;
+                _playing = true;
+            }
+            else if (_seconds == 0 && _playing)
+            {
+                MessageBox.Show("Fim de jogo");
+            }
         }
 
         void accelerometer_CurrentValueChanged(object sender, SensorReadingEventArgs<AccelerometerReading> e)
@@ -51,32 +77,9 @@ namespace QuemSou
             // If user tilts the phone with 0.35 in X axis, Handle/Change the pivot index
             if (acceleration.X < -.60 || acceleration.X > .60)
             {
-
-                //this.Dispatcher.BeginInvoke((Action)(() => { InstructionsPanel.Visibility = Visibility.Collapsed; }));
-                //this.Dispatcher.BeginInvoke((Action)(() => { ContentPanel.Visibility = Visibility.Visible; }));
-                //this.Dispatcher.BeginInvoke((Action)(() => { TitlePanel.Visibility = Visibility.Visible; }));
-                if (!_started)
-                {
-                    this.Dispatcher.BeginInvoke((Action) (() => _timer.Start()));
-                    _started = true;
-                }
-            }
-            else if (acceleration.Z >= 0.35)
-            {
-
-               // Application Logic
-                // change the pivot control index by +1
-                //this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Visible; }));
-
-            }
-            else if (acceleration.X < 0)
-            {
-                
-            }
-            else
-            {
-                //this.Dispatcher.BeginInvoke((Action)(() => { ball.Visibility = Visibility.Collapsed; }));
-
+                if (_started) return;
+                this.Dispatcher.BeginInvoke((Action) (() => _interfaceTimer.Start()));
+                _started = true;
             }
         }
 
