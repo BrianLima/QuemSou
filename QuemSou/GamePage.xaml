@@ -56,7 +56,6 @@
             <UI:AdControl x:Name="AdControl" ApplicationId="c3b403eb-90a8-4734-b08c-77faf9ffd9f7" AdUnitId="10719773" Height="80" Width="480" Margin="0,140,216,0" HorizontalAlignment="Right" />
             <TextBlock x:Name="ClockBlock" HorizontalAlignment="Right" Margin="0,-90,17,0" TextWrapping="Wrap" Text="5:59" VerticalAlignment="Top" FontSize="72" Width="141"/>
         </StackPanel>
-
     </Grid>
 
 </phone:PhoneApplicationPage>

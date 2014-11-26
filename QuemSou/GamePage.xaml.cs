@@ -102,7 +102,6 @@ namespace QuemSou
                 UpdateCurrentWord();
 
                 LayoutRoot.DataContext = _player;
-
                 base.OnNavigatedTo(e);
             }
         }
