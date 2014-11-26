@@ -62,19 +62,20 @@ namespace QuemSou
                 this.Dispatcher.BeginInvoke((Action)(() => { InstructionsPanel.Visibility = Visibility.Collapsed; }));
                 this.Dispatcher.BeginInvoke((Action)(() => { ContentPanel.Visibility = Visibility.Visible; }));
                 this.Dispatcher.BeginInvoke((Action)(() => { TitlePanel.Visibility = Visibility.Visible; }));
-                _seconds = 300;
+                _seconds = 299;
                 _playing = true;
             }
             else if (_seconds == 0 && _playing)
             {
                 MessageBox.Show("Fim de jogo");
+                _interfaceTimer.Stop();
             }
         }
 
         void accelerometer_CurrentValueChanged(object sender, SensorReadingEventArgs<AccelerometerReading> e)
         {
             Vector3 acceleration = e.SensorReading.Acceleration;
-            // If user tilts the phone with 0.35 in X axis, Handle/Change the pivot index
+            // If user tilts the phone with 0.35 in X axis, start the timer and show the word to players.
             if (acceleration.X < -.60 || acceleration.X > .60)
             {
                 if (_started) return;
@@ -92,8 +93,6 @@ namespace QuemSou
             UpdateCurrentWord();
 
             LayoutRoot.DataContext = _player;
-
-            //todo: Work with timer to update the clock on the screen
 
             base.OnNavigatedTo(e);
         }
