@@ -1,19 +1,19 @@
-﻿<xapCache source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Bin\Debug\QuemSou_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="24/11/2014 19:11:17">
-  <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\obj\Debug\QuemSou.dll" archivePath="QuemSou.dll" lastWriteTime="24/11/2014 19:11:16" />
+﻿<xapCache source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Bin\Debug\QuemSou_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="26/11/2014 20:50:43">
+  <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\obj\Debug\QuemSou.dll" archivePath="QuemSou.dll" lastWriteTime="26/11/2014 20:50:42" />
   <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="03/11/2014 19:58:21" />
   <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="03/11/2014 19:58:21" />
   <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="03/11/2014 19:58:21" />
   <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="03/11/2014 19:58:21" />
   <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="03/11/2014 19:58:21" />
-  <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="08/11/2014 14:58:39" />
+  <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="26/11/2014 20:24:30" />
   <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="03/11/2014 19:58:21" />
   <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="03/11/2014 19:58:21" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.dll" archivePath="Microsoft.Advertising.Mobile.dll" lastWriteTime="16/09/2013 10:09:00" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI.dll" archivePath="Microsoft.Advertising.Mobile.UI.dll" lastWriteTime="16/09/2013 10:09:00" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI.xml" archivePath="Microsoft.Advertising.Mobile.UI.xml" lastWriteTime="16/09/2013 10:13:06" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.xml" archivePath="Microsoft.Advertising.Mobile.xml" lastWriteTime="16/09/2013 10:13:06" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="01/01/2013 18:57:00" />
   <file source="C:\Users\Brian\Documents\Projects\TransparentSites\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="29/10/2014 20:15:43" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.Maps.dll" archivePath="Microsoft.Phone.Controls.Maps.dll" lastWriteTime="01/01/2013 18:57:00" />
-  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.xml" archivePath="Microsoft.Advertising.Mobile.xml" lastWriteTime="16/09/2013 10:13:06" />
-  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.UI.xml" archivePath="Microsoft.Advertising.Mobile.UI.xml" lastWriteTime="16/09/2013 10:13:06" />
-  <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="04/11/2014 19:09:19" />
+  <file source="C:\Users\Brian\Documents\Projects\QuemSou\QuemSou\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="26/11/2014 20:38:41" />
 </xapCache>
