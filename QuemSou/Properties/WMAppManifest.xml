@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="pt-BR" />
-  <App xmlns="" ProductID="{e1db8ada-e1c2-4514-932b-5ca57058b73f}" Title="QuemSou" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="QuemSou author" Description="Sample description" Publisher="QuemSou" PublisherID="{e2ed0bf7-901d-4c8a-8a69-4056daec8d95}">
+  <App xmlns="" ProductID="{e1db8ada-e1c2-4514-932b-5ca57058b73f}" Title="Quem Sou?" RuntimeType="Silverlight" Version="0.9.0.0" Genre="apps.normal" Author="Briano" Description="Sample description" Publisher="Briano" PublisherID="{e2ed0bf7-901d-4c8a-8a69-4056daec8d95}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -21,17 +21,20 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>QuemSou</Title>
+          <Title>Quem Sou?</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileLarge.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>
