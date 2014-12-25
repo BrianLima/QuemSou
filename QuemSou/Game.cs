@@ -29,6 +29,8 @@ namespace QuemSou
                 category = "Pokémons", 
                 description = "Monstros do jogo Pokémon"
             });
+
+            categories.Sort();
         }
 
         public string Play(String category)
@@ -52,10 +54,16 @@ namespace QuemSou
         }
     }
 
-    public class Category
+    public class Category : IComparable
     {
         public String category { get; set; }
         public String description { get; set; }
+
+        public int CompareTo(Object obj)
+        {
+            Category category = (Category)obj;
+            return this.category.CompareTo(category.category);
+        }
     }
 
     public static class Music

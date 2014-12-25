@@ -1,4 +1,5 @@
-﻿using Microsoft.Devices.Sensors;
+﻿using Microsoft.Devices;
+using Microsoft.Devices.Sensors;
 using Microsoft.Phone.Controls;
 using Microsoft.Xna.Framework;
 using System;
@@ -7,6 +8,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Navigation;
 using System.Windows.Threading;
+using Windows.Phone.Devices.Notification;
 
 namespace QuemSou
 {
@@ -71,10 +73,14 @@ namespace QuemSou
                 this.Dispatcher.BeginInvoke((Action)(() => { TitlePanel.Visibility = Visibility.Visible; }));
                 _seconds = 299;
                 _playing = true;
+                var vibrationDevice = VibrateController.Default;
+                this.Dispatcher.BeginInvoke((Action)(() => vibrationDevice.Start(new TimeSpan(100))));
             }
             else if (_seconds < 0 && _playing)
             {
                 MessageBox.Show("Fim de jogo");
+                var vibrationDevice = VibrateController.Default;
+                this.Dispatcher.BeginInvoke(() => vibrationDevice.Start(new TimeSpan(100)));
                 _interfaceTimer.Stop();
             }
         }
@@ -126,7 +132,6 @@ namespace QuemSou
         {
             Debug.WriteLine("AdControl error: " + e.Error.Message);
         }
-
 
         private void AdControl_AdRefreshed(object sender, EventArgs e)
         {
