@@ -12,24 +12,18 @@ namespace QuemSou
 
         public void StartGame()
         {
-            categories.Add(new Category()
-            {
-                category = "Musicas nacionais",
-                description = "Musicas de artistas brasileiros"
-            });
+            categories.Add(new Category("Musicas nacionais","Musicas de artistas brasileiros"));
 
-            categories.Add(new Category()
-            {
-                category = "Artistas nacionais",
-                description = "Artistas famosos brasileiros"
-            });
+            categories.Add(new Category("Cantores e bandas nacionais", "Cantores e bandas famosas do Brasil"));
 
-            categories.Add(new Category()
-            {
-                category = "Pokémons", 
-                description = "Monstros do jogo Pokémon"
-            });
+            categories.Add(new Category("Pokémons", "Monstros do jogo Pokémon"));
 
+            categories.Add(new Category("Filmes","Filmes nacionais e internacionais"));
+
+            categories.Add(new Category("Carros", "Carros nacionais"));
+
+            categories.Add(new Category("Objetos", "Coisas que existem no dia a dia"));
+                
             categories.Sort();
         }
 
@@ -42,12 +36,22 @@ namespace QuemSou
                 case "Musicas nacionais":
                     index = rand.Next(Music._list.Count);
                     return Music._list[index];
-                case "Artistas Nacionais":
+                case "Cantores e bandas nacionais":
                     index = rand.Next(NationalArtists._list.Count);
                     return NationalArtists._list[index];
                 case "Pokémons":
                     index = rand.Next(Pokemon._list.Count);
                     return Pokemon._list[index];
+                case "Filmes":
+                    index = rand.Next(Movies._list.Count);
+                    return Movies._list[index];
+                case "Carros":
+                    index = rand.Next(Cars._list.Count);
+                    return Cars._list[index];
+                case "Objetos":
+                    index = rand.Next(Things._list.Count);
+                    return Things._list[index];
+
                 default:
                     return null;
             }
@@ -56,6 +60,11 @@ namespace QuemSou
 
     public class Category : IComparable
     {
+        public Category(string category, string description){
+            this.category = category;
+            this.description = description;
+        }
+
         public String category { get; set; }
         public String description { get; set; }
 
@@ -71,7 +80,10 @@ namespace QuemSou
         public static List<String> _list = new List<String>
         {
             "Robocop Gay",
-            "A lenda dessa paixão"
+            "A lenda dessa paixão",
+            "Pelados em santos",
+            "Só você sabe",
+            "Ana Julia",
         };
     }
 
@@ -81,10 +93,92 @@ namespace QuemSou
         {
             "Pitty",
             "Gabriel Tomaz",
-            "Flávia Couri"
+            "Flávia Couri",
+            "Lobão",
+            "Dinho ouro Preto",
+            "Falcão",
+            "Malu Magalhães",
+            "Marcelo Camelo",
+            "Nando",
+            "Thiaguinho",
+            "Rita Lee",
+            "Renato Russo",
+            "CPM22",
+            "Charlie Brown Jr",
+            "Mamonas Assassinas",
+            "Legião Urbana",
+            "Rouge"
         };
     }
 
+    public static class Movies
+    {
+        public static List<String> _list = new List<string>
+        {
+            "Carga Explosiva",
+            "Taxi",
+            "A era do gelo",
+            "Toy Story",
+            "De volta para o futuro",
+            "Star Wars",
+            "Her",
+            "O Hobbit",
+            "O senhor dos Anéis",
+            "Harry Potter",
+            "Sr e Sra Smith",
+            "MIB",
+            "A rede social",
+            "Tenacious D",
+            "Escola de Rock",
+            "A lagoa azul"
+        };
+    }
+
+    public static class Cars
+    {
+        public static List<String> _list = new List<string>
+        {
+            "Voyage",
+            "Brasilia",
+            "Fusca",
+            "Passat",
+            "Palio",
+            "Fusion",
+            "Civic",
+            "147",
+            "Corsa",
+            "Celta"
+        };
+    }
+
+    public static class Things
+    {
+        public static List<String> _list = new List<string>
+        {
+            "Garfo",
+            "Colher",
+            "Copo",
+            "Prato",
+            "Mesa",
+            "Tampa",
+            "Garrafa",
+            "Caixa",
+            "Tomada",
+            "Papel",
+            "Esponja",
+            "Bacia",
+            "Pote",
+            "Panela",
+            "Carregador",
+            "Palito",
+            "Escova",
+            "Pano",
+            "Cafeteira"
+        };
+    }
+
+
+    //Thank you @WardoJ for this massive list of pokémons!
     public static class Pokemon
     {
         public static List<String> _list = new List<String>

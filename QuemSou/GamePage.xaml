@@ -51,7 +51,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,10" Grid.RowSpan="2">
             <TextBlock Text="Eu Sou:" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,0,0" FontSize="36" HorizontalAlignment="Left" Width="136"/>
-            <TextBlock Text="{Binding Category}" Style="{StaticResource PhoneTextNormalStyle}" Margin="348,-48,0,0" TextAlignment="Right" FontSize="36" Foreground="{StaticResource PhoneAccentBrush}"/>
+            <TextBlock Text="{Binding Category}" Style="{StaticResource PhoneTextNormalStyle}" Margin="328,-48,20,0" TextAlignment="Right" FontSize="36" Foreground="{StaticResource PhoneAccentBrush}"/>
             <TextBlock Text="{Binding CurrentWord}" TextAlignment="Center" Margin="9,47,0,0" Style="{StaticResource PhoneTextTitle1Style}" RenderTransformOrigin="0.501,0.5" FontWeight="Bold"/>
             <UI:AdControl x:Name="AdControl" ApplicationId="c3b403eb-90a8-4734-b08c-77faf9ffd9f7" AdUnitId="10719773" Height="80" Width="480" Margin="0,140,216,0" HorizontalAlignment="Right" />
             <TextBlock x:Name="ClockBlock" HorizontalAlignment="Right" Margin="0,-90,17,0" TextWrapping="Wrap" Text="5:59" VerticalAlignment="Top" FontSize="72" Width="141"/>
